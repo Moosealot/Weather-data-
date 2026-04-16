@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const input = document.getElementById("state-input");
 const button = document.getElementById("get-alerts");
-const alertsContainer = document.getElementById("alerts-container");
+const alertsContainer = document.getElementById("alerts-display");
 const errorDiv = document.getElementById("error-message");
 const loadingDiv = document.getElementById("loading");
 
@@ -46,9 +46,7 @@ function displayAlerts(data, state) {
     const alerts = data.features;
 
     const summary = document.createElement("h2");
-    summary.textContent = `Current watches, warnings, and advisories for ${state}: ${alerts.length}`;
-    alertsContainer.appendChild(summary);
-
+    summary.textContent = `Weather Alerts: ${alerts.length}`;    alertsContainer.appendChild(summary);
     const list = document.createElement("ul");
 
     alerts.forEach(alert => {
